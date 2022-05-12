@@ -1,0 +1,247 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "leatherPurse",
+      "price": 500,
+      "description": "Womens Purses and Handbags Ladies Designer PU Leather Top Handle Satchel Tote Bag Shoulder Bags",
+      "category": "handbag",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqMx8qFt66k4PSAv3coQP34Zw4FxQorPKKTQ&usqp=CAU",
+      "rating": {
+        "rate": 3,
+        "count": 120
+      }
+    },
+    {
+      "id": 2,
+      "title": "Purse",
+      "price": 299,
+      "description": "Purses and Handbags for Women Fashion Ladies PU Leather Top Handle Satchel Shoulder Tote Bags",
+      "category": "handbag",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwoJ6lE5BrofJCpwduelr6zQpGcMbfCb3fEg&usqp=CAU",
+      "rating": {
+        "rate": 4.1,
+        "count": 259
+      }
+    },
+    {
+      "id": 3,
+      "title": "ladies Handpurse",
+      "price": 599,
+      "description": "Womens Purses and Handbags Ladies Designer PU Leather Top Handle Satchel Tote Bag Shoulder Bags",
+      "category": "handbag",
+      "image": "https://cdn.shopify.com/s/files/1/0262/8406/4823/products/121395459_1-Gold-Embellished-Clutch-Bag_540x.jpg?v=1649248119",
+      "rating": {
+        "rate": 4.7,
+        "count": 500
+      }
+    },
+    {
+      "id": 4,
+      "title": "HandBag",
+      "price": 199,
+      "description": "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
+      "category": "handbag",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSSUgXM91QfGQhMDNVi5dawNFkci_PKrnCAA&usqp=CAU",
+      "rating": {
+        "rate": 2.1,
+        "count": 430
+      }
+    },
+    {
+      "id": 5,
+      "title": "Nacklace Gold",
+      "price": 695,
+      "description": "Earring Jewellery chain Necklace Gold, Jewellery, ring, diamond png",
+      "category": "jewelery",
+      "image": "https://e7.pngegg.com/pngimages/320/1023/png-clipart-earring-jewellery-chain-necklace-gold-jewellery-miscellaneous-ring-thumbnail.png",
+      "rating": {
+        "rate": 4.6,
+        "count": 400
+      }
+    },
+    {
+      "id": 6,
+      "title": "Solid Gold jewwllery ",
+      "price": 1299,
+      "description": "Jewellery Costume jewelry resolution, Indian Jewellery, image File Formats, fashion png",
+      "category": "jewelery",
+      "image": "https://e7.pngegg.com/pngimages/595/878/png-clipart-jewellery-costume-jewelry-resolution-indian-jewellery-image-file-formats-fashion-thumbnail.png",
+      "rating": {
+        "rate": 3.9,
+        "count": 70
+      }
+    },
+    {
+      "id": 7,
+      "title": "White Gold Plated Princess",
+      "price": 999,
+      "description": "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...",
+      "category": "jewelery",
+      "image": "https://e7.pngegg.com/pngimages/758/788/png-clipart-pearl-earring-brooch-jewellery-costume-jewelry-jewellery-miscellaneous-gemstone-thumbnail.png",
+      "rating": {
+        "rate": 3,
+        "count": 400
+      }
+    },
+    {
+      "id": 8,
+      "title": "Pierced Owl Rose Gold Plated Stainless Steel Double",
+      "price": 1099,
+      "description": "Wedding ring Jewellery Cubic zirconia Engagement, wedding ring, love, gemstone png",
+      "category": "jewelery",
+      "image": "https://e7.pngegg.com/pngimages/324/836/png-clipart-wedding-ring-jewellery-cubic-zirconia-engagement-wedding-ring-love-gemstone-thumbnail.png",
+      "rating": {
+        "rate": 1.9,
+        "count": 100
+      }
+    },
+    {
+      "id": 9,
+      "title": "Lakme Compact – Face It , Matte Finish Powder For Instant Glow, 9 g Marble",
+      "price": 999,
+      "description": "Look picture perfect with the Lakm Face It Compact. Use this dynamic compact by Lakme and get a glowing complexion in an instant",
+      "category": "beauty",
+      "image":"https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcT4BegeXhzHGG3JE8Eg45ZSxLyNn9W8jY1eaNCqjjJDzLSmwvELa3Qk4EH1yBwNFizfB1eWHU4yTUe6dYMk2GZMdnHbA6qrtMyiYk7xEEU&usqp=CAE",
+      "rating": {
+        "rate": 3.3,
+        "count": 203
+      }
+    },
+    {
+      "id": 10,
+      "title": "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
+      "price": 109,
+      "description": "Easy upgrade for faster boot up, shutdown, application load and response (As compared to 5400 RPM SATA 2.5” hard drive; Based on published specifications and internal benchmarking tests using PCMark vantage scores) Boosts burst write performance, making it ideal for typical PC workloads The perfect balance of performance and reliability Read/write speeds of up to 535MB/s/450MB/s (Based on internal testing; Performance may vary depending upon drive capacity, host device, OS and application.)",
+      "category": "beauty",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIzcYanMqwAeKegTwrN02rMvCsk-eBbJDAOA&usqp=CAU",
+      "rating": {
+        "rate": 3.9,
+        "count": 470
+      }
+    },
+    {
+      "id": 11,
+      "title": "Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5",
+      "price": 499,
+      "description": "3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks. Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking & Correction) to provide the optimized performance and enhanced reliability.",
+      "category": "beauty",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4ZE0H4ixFs0uOcZX_a2yu68VjITvnQRg2qA&usqp=CAU",
+      "rating": {
+        "rate": 4.8,
+        "count": 319
+      }
+    },
+    {
+      "id": 12,
+      "title": "WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive",
+      "price": 599,
+      "description": "Expand your PS4 gaming experience, Play anywhere Fast and easy, setup Sleek design with high capacity, 3-year manufacturer's limited warranty",
+      "category": "beauty",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVuObn71axlkkfvGJrNoYD-vwF2pDXbDAXvw&usqp=CAU",
+      "rating": {
+        "rate": 4.8,
+        "count": 400
+      }
+    },
+    {
+      "id": 13,
+      "title": "HUda brauty Liquid Mat",
+      "price": 599,
+      "description": "Lip Contouring Technique.Huda Beauty Matte Lipstick Lip Care 12 Pieces Set",
+      "category": "beauty",
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQzqEqdEzHZ9m3JUZ3vlq2Vhohr6hP2yo72prrAkx5-17v4ZY7LASoQgacitJud2z04s0ubB65WjOE0SJomFNB4IRTEyEyz&usqp=CAE",
+      "rating": {
+        "rate": 2.9,
+        "count": 250
+      }
+    },
+    {
+      "id": 14,
+      "title": "Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED ",
+      "price": 999,
+      "description": "49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side QUANTUM DOT (QLED) TECHNOLOGY, HDR support and factory calibration provides stunningly realistic and accurate color and contrast 144HZ HIGH REFRESH RATE and 1ms ultra fast response time work to eliminate motion blur, ghosting, and reduce input lag",
+      "category": "beauty",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAIJyBj2w9oLqqqhek1yuOQVrQIXwh6DRBIIkUXLc48-KF2BmGp_KhXhgdMhXIh_pqOhQ&usqp=CAU",
+      "rating": {
+        "rate": 2.2,
+        "count": 140
+      }
+    },
+    {
+      "id": 15,
+      "title": "Unique Qulity makeup",
+      "price": 5699,
+      "description": "Color: Multicolor Multipack: 7 This Makeup Kit includes most coveted beauty products which gives Blemish free, Even tone, Pretty and Radiant looks to your skin.",
+      "category": "beauty",
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcROxQCPnG9ftEDHE9ESUDwieafWFcpqAhOQJjsZjUmz4e2gmyiS510dVY-RymglC77TEIZfzdvTt49y8IS0ckuU4M1zCTK_lxaIS37P2g_D0OMsy45uRtZB_A&usqp=CAE",
+      "rating": {
+        "rate": 2.6,
+        "count": 235
+      }
+    },
+    {
+      "id": 16,
+      "title": " Diva Fancy Jewellery Sets",
+      "price": 2995,
+      "description": "Base Metal : Alloy Plating : Gold Plated Stone Type : Artificial Stones",
+      "category": "jewelery",
+      "image": "https://images.meesho.com/images/products/42523149/xonjk_512.jpg",
+      "rating": {
+        "rate": 3.9,
+        "count": 340
+      }
+    },
+    {
+      "id": 17,
+      "title": "Jewellery Gold Bangle Jewelry design",
+      "price": 3999,
+      "description": "Jewellery Gold Bangle Jewelry design, indian jewellery, gemstone, diamond png",
+      "category": "jewelery",
+      "image": "https://e7.pngegg.com/pngimages/233/956/png-clipart-jewellery-gold-bangle-jewelry-design-indian-jewellery-miscellaneous-gemstone-thumbnail.png",
+      "rating": {
+        "rate": 3.8,
+        "count": 679
+      }
+    },
+    {
+      "id": 18,
+      "title": "Ring Jewellery Diamond Jewelry designer",
+      "price": 999,
+      "description": "Ring Jewellery Diamond Jewelry designer, Jewellery Ring, gemstone, bracelet png",
+      "category": "jewelery",
+      "image": "https://e7.pngegg.com/pngimages/211/573/png-clipart-ring-jewellery-diamond-jewelry-designer-jewellery-ring-gemstone-bracelet-thumbnail.png",
+      "rating": {
+        "rate": 4.7,
+        "count": 130
+      }
+    },
+    {
+      "id": 19,
+      "title": "Diamond Necklace Earring Charms",
+      "price": 795,
+      "description": "Diamond Necklace Earring Charms & Pendants Jewellery, diamond, gemstone, pendant png",
+      "category": "jewelery",
+      "image": "https://e7.pngegg.com/pngimages/828/258/png-clipart-diamond-necklace-earring-charms-pendants-jewellery-diamond-gemstone-pendant-thumbnail.png",
+      "rating": {
+        "rate": 4.5,
+        "count": 146
+      }
+    },
+    {
+      "id": 20,
+      "title": "Earring Jewellery Bride Necklace Costume jewelry",
+      "price": 1299,
+      "description": "Earring Jewellery Bride Necklace Costume jewelry, advertisement jewellery, gemstone, ring png",
+      "category": "jewelery",
+      "image": "https://e7.pngegg.com/pngimages/37/860/png-clipart-earring-jewellery-bride-necklace-costume-jewelry-advertisement-jewellery-miscellaneous-gemstone-thumbnail.png",
+      "rating": {
+        "rate": 3.6,
+        "count": 145
+      }
+    }
+  ]
+   
+  
+  
+}

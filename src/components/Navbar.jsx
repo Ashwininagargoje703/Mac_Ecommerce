@@ -191,7 +191,7 @@ export const Navbar=()=>{
               aria-controls={menuId}
               aria-haspopup="true"
               color="inherit"
-              onClick={()=>navigate("/")} 
+              onClick={()=>navigate("/signup")} 
               
             >
               <AccountCircle   />

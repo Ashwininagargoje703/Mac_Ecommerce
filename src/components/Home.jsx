@@ -19,12 +19,11 @@ export const Home = () => {
    const data=useSelector((e)=>e.product)
    
 
-  useEffect(()=>{
-    axios.get("http://localhost:8080/products?_limit=9").then(({data})=>{
-     
-      dispatch(setproducts(data))
+   useEffect(()=>{
+    axios.get("http://localhost:8080/products").then(({data})=>{
+      dispatch(setproducts(data))       
     })
-  },[])
+},[])
 
 
 

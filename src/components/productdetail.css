@@ -1,0 +1,41 @@
+
+.productcontainer{
+    width:100%;
+    height:100vh;
+    display:flex;
+    gap:20px;
+    margin-top: 80px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: blue;
+
+
+}
+.product_image{
+    width:30%;
+    min-height:40%;
+    box-shadow: wheat;
+    transition: .7s ease-in;
+    
+    
+
+}
+.product_detail{
+    width:45%;
+    min-height:40%;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding-left: 20px;
+    line-height:25px;
+    background-color: skyblue;
+
+}
+img{
+    width:300px;
+    height:300px;
+    padding-left: 30px;
+}
+.product_image:hover{
+    transform: scale(1.5);
+    box-shadow: none;
+    
+}

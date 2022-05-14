@@ -156,7 +156,7 @@ export const Navbar=()=>{
             noWrap
             component="div"
             sx={{ display: { xs: 'none', sm: 'block' },fontFamily:'sans-serif',cursor:"pointer"}}
-            onClick={()=>navigate("/")}
+            onClick={()=>navigate("/home")}
           >
           <img style={{height :'40px', width: '120px'}} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC9gIJ8P-mH6gnhNlBAtbV4oue1oJMSE0QbQ&usqp=CAU'></img>
           </Typography>
@@ -180,6 +180,7 @@ export const Navbar=()=>{
               aria-haspopup="true"
               
               color="inherit"
+              onClick={()=>navigate("/cart")} 
             >
               <ShoppingCartIcon />
             </IconButton>

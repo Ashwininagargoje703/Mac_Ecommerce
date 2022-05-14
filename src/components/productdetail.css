@@ -7,14 +7,13 @@
     margin-top: 80px;
     justify-content: center;
     align-items: center;
-    box-shadow: blue;
-
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
 }
 .product_image{
     width:30%;
     min-height:40%;
-    box-shadow: wheat;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     transition: .7s ease-in;
     
     
@@ -25,13 +24,12 @@
     min-height:40%;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     padding-left: 20px;
-    line-height:25px;
-    background-color: skyblue;
+    line-height:25px
 
 }
-img{
-    width:300px;
-    height:300px;
+.product_image img{
+    width:250px;
+    height:270px;
     padding-left: 30px;
 }
 .product_image:hover{

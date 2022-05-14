@@ -43,12 +43,12 @@ display:"flex"
     onClick={()=> navigate(`/product/${e.id}`)}
     >
      <img src={e.image} alt="" style={{width:"100%",height:"150px",objectFit:"contain",display:"flex",justifyContent:"center",alignItems:"center"}} />
-     <h3 style={{fontSize:"14px",paddingLeft:"10px", color:"black" }}>{e.title}</h3>
+     <h3 style={{fontSize:"14px",paddingLeft:"10px" }}>{e.title}</h3>
      <h4 style={{fontSize:"12px",paddingLeft:"10px"}}> Rs {e.price}</h4>
      <Stack spacing={2}>
-            <Rating value={e.rating.rate} precision={0.5} size='large' style={{color: 'green'}}  />
+            <Rating value={e.rating.rate} precision={0.5} size='small'  />
         </Stack>
-     
+        <p style={{color:"red",paddingLeft:"10px"}}>20% off for students</p>
 
 
    </div>

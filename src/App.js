@@ -6,9 +6,11 @@ import { Home } from './components/Home';
 import { Productpage } from './components/Productpage';
 import {Routes,Route} from 'react-router-dom'
 import {Productdetail} from './components/Productdetail';
-import { Cart } from './components/Cart';
+import { Cart } from "./components/Cart";
 import { SignInSide } from "./components/sign-in/Login";
 import { SignUpSide } from "./components/sign-up/SignUp";
+
+
 function App() {
   return (
     <>
@@ -19,7 +21,9 @@ function App() {
      <Route path="/product/:id" element={<Productdetail />} />
      <Route path="/signup" element={<SignUpSide />} />
       <Route path="/signin" element={<SignInSide />} />
-     <Route path="/cart" element={<Cart />} />
+      <Route path="/cart" element={<Cart />} />
+
+      
      
 
    </Routes>

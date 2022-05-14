@@ -3,7 +3,9 @@
 const initialstate={
     product:[],
     selectedproduct:{},
-    sortedData:[]
+    sortedData:[],
+    logindata:[]
+
 }
  export const reducer=(state=initialstate,{type,payload})=>{
      
@@ -23,7 +25,12 @@ const initialstate={
             return{
                 ...state,
                 sortedData:payload
-            }   
+            } 
+            case "LOGIN_DETAIL":
+                return{
+                    ...state,
+                    logindata:payload
+                } 
            
             default:return state
                   

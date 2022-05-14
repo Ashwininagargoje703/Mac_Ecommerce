@@ -15,3 +15,8 @@
     payload:data
 })
 
+export const Login_detail=(data)=>({
+  type:"LOGIN_DETAIL",
+  payload:data
+})
+

@@ -1,17 +1,20 @@
-import {useEffect} from 'react'
+import {useEffect,useState} from 'react'
 import {useParams} from 'react-router-dom'
 import "./productdetail.css"
 import { Stack,Rating, Typography, Button} from '@mui/material'
 import axios from 'axios'
 import { useDispatch,useSelector } from 'react-redux'
 import { selectedproduct } from '../redux/actions'
+import {useNavigate} from "react-router-dom"
 
 
 
 export const Productdetail = () => {
     const dispatch=useDispatch()
     const store=useSelector((e)=>e.selectedproduct)
-    console.log(store)
+    const navigate=useNavigate()
+    const [cart,setCart]=useState({})
+    console.log("cart ",cart)
 
     let {id} = useParams()
 
@@ -20,9 +23,15 @@ export const Productdetail = () => {
         axios.get(`http://localhost:8080/products/${id}`).then(({data})=>{
             
             dispatch(selectedproduct(data))
+            setCart(data)
 
         })
     },[])
+    const handlesubmit=()=>{
+        axios.post("http://localhost:8080/cartproduct",{cart}).then(({data})=>{
+            navigate("/cart")
+        })
+    }
 
   return (
     <>
@@ -35,15 +44,15 @@ export const Productdetail = () => {
             <h4 style={{padding:"0px"}}>{store.category}</h4>
             <h3>Rs {store.price} -/-</h3>
             <Stack spacing={2}>
-            <Rating value={store.rating?.rate} precision={0.5} size='large' style={{color: 'green'}} />
+            <Rating value={store.rating?.rate} precision={0.5} size='small'  />
         </Stack>
-        {/* <h3 style={{color:"red", fontFamily:"sans-serif"}}> Free delivery from Masai</h3> */}
+        <h3 style={{color:"red", fontFamily:"sans-serif"}}> Free delivery from Masai</h3>
         <Typography variant="body1" sx={{lineHeight:"25px"}}>{store.description}
           </Typography>
 
           <Button variant='contained'
-     sx={{bgcolor:'red',fontFamily:'sans-serif',marginTop:'20px',mb:'30px'}}
-     onClick={()=>console.log("ash")}
+     sx={{bgcolor:'black',fontFamily:'sans-serif',marginTop:'20px',mb:'30px'}}
+     onClick={handlesubmit}
      >Add to Cart</Button>
         </div>
         

@@ -44,9 +44,8 @@ export const Productdetail = () => {
             <h4 style={{padding:"0px"}}>{store.category}</h4>
             <h3>Rs {store.price} -/-</h3>
             <Stack spacing={2}>
-            <Rating value={store.rating?.rate} precision={0.5} size='small'  />
+            <Rating value={store.rating?.rate} precision={0.5} size='small' style={{color: 'green'}}  />
         </Stack>
-        <h3 style={{color:"red", fontFamily:"sans-serif"}}> Free delivery from Masai</h3>
         <Typography variant="body1" sx={{lineHeight:"25px"}}>{store.description}
           </Typography>
 

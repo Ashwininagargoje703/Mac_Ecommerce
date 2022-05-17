@@ -20,7 +20,7 @@ export const Productdetail = () => {
 
     useEffect(()=>{
        
-        axios.get(`http://localhost:8080/products/${id}`).then(({data})=>{
+        axios.get(`https://my-json-server-masai.herokuapp.com/products/${id}`).then(({data})=>{
             
             dispatch(selectedproduct(data))
             setCart(data)

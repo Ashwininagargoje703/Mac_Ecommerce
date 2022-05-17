@@ -16,7 +16,7 @@ export const Productpage = () => {
 
 
     useEffect(()=>{
-        axios.get("http://localhost:8080/products").then(({data})=>{
+        axios.get("https://my-json-server-masai.herokuapp.com/products").then(({data})=>{
           dispatch(setproducts(data))       
         })
     },[])
@@ -47,6 +47,12 @@ display:"flex"
      <h4 style={{fontSize:"12px",paddingLeft:"10px"}}> Rs {e.price}</h4>
      <Stack spacing={2}>
             <Rating value={e.rating.rate} precision={0.5} size='small' style={{color: 'green'}}   />
+            <button style={{ width:"150px",
+  height:"40px",
+  backgroundColor:'black',
+  color:"white",
+  fontSize:"20px",
+  fontFamily: "san"}}>See Details</button>
         </Stack>
      
 

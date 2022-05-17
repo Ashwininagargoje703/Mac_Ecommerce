@@ -20,7 +20,7 @@ export const Home = () => {
    
 
    useEffect(()=>{
-    axios.get("http://localhost:8080/products").then(({data})=>{
+    axios.get("https://my-json-server-masai.herokuapp.com/products").then(({data})=>{
       dispatch(setproducts(data))       
     })
 },[])
@@ -94,6 +94,6 @@ display:"flex"
    
      
     </>
-    
+  
   )
 }

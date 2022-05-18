@@ -255,101 +255,7 @@
           "count": 430
         }
       },
-      "id": 10
-    },
-    {
-      "cart": {
-        "id": 18,
-        "title": "Ring Jewellery Diamond Jewelry designer",
-        "price": 999,
-        "description": "Ring Jewellery Diamond Jewelry designer, Jewellery Ring, gemstone, bracelet png",
-        "category": "jewelery",
-        "image": "https://e7.pngegg.com/pngimages/211/573/png-clipart-ring-jewellery-diamond-jewelry-designer-jewellery-ring-gemstone-bracelet-thumbnail.png",
-        "rating": {
-          "rate": 4.7,
-          "count": 130
-        }
-      },
-      "id": 11
-    },
-    {
-      "cart": {
-        "id": 9,
-        "title": "Lakme Compact – Face It , Matte Finish Powder For Instant Glow, 9 g Marble",
-        "price": 999,
-        "description": "Look picture perfect with the Lakm Face It Compact. Use this dynamic compact by Lakme and get a glowing complexion in an instant",
-        "category": "beauty",
-        "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcT4BegeXhzHGG3JE8Eg45ZSxLyNn9W8jY1eaNCqjjJDzLSmwvELa3Qk4EH1yBwNFizfB1eWHU4yTUe6dYMk2GZMdnHbA6qrtMyiYk7xEEU&usqp=CAE",
-        "rating": {
-          "rate": 3.3,
-          "count": 203
-        }
-      },
-      "id": 12
-    },
-    {
-      "cart": {
-        "id": 4,
-        "title": "HandBag",
-        "price": 199,
-        "description": "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
-        "category": "handbag",
-        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSSUgXM91QfGQhMDNVi5dawNFkci_PKrnCAA&usqp=CAU",
-        "rating": {
-          "rate": 2.1,
-          "count": 430
-        }
-      },
       "id": 13
-    },
-    {
-      "cart": {
-        "id": 4,
-        "title": "HandBag",
-        "price": 199,
-        "description": "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
-        "category": "handbag",
-        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSSUgXM91QfGQhMDNVi5dawNFkci_PKrnCAA&usqp=CAU",
-        "rating": {
-          "rate": 2.1,
-          "count": 430
-        }
-      },
-      "id": 14
-    },
-    {
-      "cart": {
-        "id": 6,
-        "title": "Solid Gold jewwllery ",
-        "price": 1299,
-        "description": "Jewellery Costume jewelry resolution, Indian Jewellery, image File Formats, fashion png",
-        "category": "jewelery",
-        "image": "https://e7.pngegg.com/pngimages/595/878/png-clipart-jewellery-costume-jewelry-resolution-indian-jewellery-image-file-formats-fashion-thumbnail.png",
-        "rating": {
-          "rate": 3.9,
-          "count": 70
-        }
-      },
-      "id": 16
-    },
-    {
-      "cart": {
-        "id": 1,
-        "title": "leatherPurse",
-        "price": 500,
-        "description": "Womens Purses and Handbags Ladies Designer PU Leather Top Handle Satchel Tote Bag Shoulder Bags",
-        "category": "handbag",
-        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqMx8qFt66k4PSAv3coQP34Zw4FxQorPKKTQ&usqp=CAU",
-        "rating": {
-          "rate": 3,
-          "count": 120
-        }
-      },
-      "id": 17
-    },
-    {
-      "cart": {},
-      "id": 18
     },
     {
       "cart": {
@@ -368,48 +274,18 @@
     },
     {
       "cart": {
-        "id": 4,
-        "title": "HandBag",
-        "price": 199,
-        "description": "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
-        "category": "handbag",
-        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSSUgXM91QfGQhMDNVi5dawNFkci_PKrnCAA&usqp=CAU",
+        "id": 8,
+        "title": "Pierced Owl Rose Gold Plated Stainless Steel Double",
+        "price": 1099,
+        "description": "Wedding ring Jewellery Cubic zirconia Engagement, wedding ring, love, gemstone png",
+        "category": "jewelery",
+        "image": "https://e7.pngegg.com/pngimages/324/836/png-clipart-wedding-ring-jewellery-cubic-zirconia-engagement-wedding-ring-love-gemstone-thumbnail.png",
         "rating": {
-          "rate": 2.1,
-          "count": 430
+          "rate": 1.9,
+          "count": 100
         }
       },
       "id": 20
-    },
-    {
-      "cart": {
-        "id": 1,
-        "title": "leatherPurse",
-        "price": 500,
-        "description": "Womens Purses and Handbags Ladies Designer PU Leather Top Handle Satchel Tote Bag Shoulder Bags",
-        "category": "handbag",
-        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqMx8qFt66k4PSAv3coQP34Zw4FxQorPKKTQ&usqp=CAU",
-        "rating": {
-          "rate": 3,
-          "count": 120
-        }
-      },
-      "id": 21
-    },
-    {
-      "cart": {
-        "id": 1,
-        "title": "leatherPurse",
-        "price": 500,
-        "description": "Womens Purses and Handbags Ladies Designer PU Leather Top Handle Satchel Tote Bag Shoulder Bags",
-        "category": "handbag",
-        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqMx8qFt66k4PSAv3coQP34Zw4FxQorPKKTQ&usqp=CAU",
-        "rating": {
-          "rate": 3,
-          "count": 120
-        }
-      },
-      "id": 22
     }
   ]
 }

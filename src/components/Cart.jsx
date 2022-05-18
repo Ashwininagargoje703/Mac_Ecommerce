@@ -7,8 +7,8 @@ import {useDispatch,useSelector} from "react-redux"
 import axios from "axios"
 import {useNavigate} from "react-router-dom"
 
-
-
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { Link } from 'react-router-dom';
 
 export const Cart=()=>{
     const dispatch=useDispatch()
@@ -66,15 +66,12 @@ export const Cart=()=>{
            
     <div style={{width:"50%"}}>
         <div className="Payment" style={{marginTop:"10%"}}>
-        <p className="uber">YOUR</p>
-        <p className="eats">Items</p>
-        </div>
-       
+        <h4 className="uber">Shopping Cart</h4>
+     </div>
+       <hr></hr>
         <div className="city">
       <div style={{ lineHeight:"10px"}}>
         
-
-
 <p className="LA">{userDetail.input?.Name}</p>
           <p className="LA">{userDetail.input?.Address}, {userDetail.input?.Pincode}</p>
 
@@ -93,8 +90,13 @@ export const Cart=()=>{
 
 
 
-<select name="Remove" id="Remove" onChange={handleChange} >
-<option>Quantity</option>
+    <p style={{fontWeight:"500", fontSize:'20px'}}>{e.cart.title}</p>
+    <p style={{fontWeight:"500",fontSize:"30px",color:"midnightblue"}}>Rs {rate*Math.ceil(e.cart.price)} -/-</p>
+</div>
+<div className="dish_detail">
+  <img src={e.cart.image} alt="" style={{width:"100%",height:"100%"}} />
+  <select name="Remove" id="Remove" onChange={handleChange} >
+<option style={{color:'blue'}}>Quantity</option>
     <option value="1">1</option>
     <option value="2">2</option>
     <option value="3">3</option>
@@ -105,60 +107,63 @@ export const Cart=()=>{
     <option value="8">8</option>
     
 </select>
-    <p style={{fontWeight:"500"}}>{e.cart.title}</p>
-    <p style={{fontWeight:"500",fontSize:"20px",color:"green"}}>Rs {rate*Math.ceil(e.cart.price)} -/-</p>
-</div>
-<div className="dish_detail">
-  <img src={e.cart.image} alt="" style={{width:"50%",height:"100%"}} />
-  <p style={{margin:"0px", fontSize:"14px",fontWeight:"500"}}>{e.cart.category}</p>
+
+  <p style={{margin:"0px", fontSize:"25px",fontWeight:"500"}}>{e.cart.category}</p>
+  <br></br>
+  
   <button onClick={()=>handleRate(e.id)}  style={{backgroundColor:"black",border:"none",outline:"none", color:"white",padding:"10px",borderRadius:"5px"}}>Remove from cart</button>
 
 </div>
+<hr></hr>
     </>
+
     ))}
 
          
       </div>
       
         </div>
-        <div className="payment_detail" style={{width:'40%', backgroundColor:'black', color:'white'}}>
-            <div className="payment_order">
+        <div className="payment_detail" style={{width:'30%', backgroundColor:'black', color:'white', marginTop:'30px', marginLeft:'8%'}}>
+            <div className="payment_order" style={{marginTop:'50px'}} >
 
        </div>
        <div className="offer_line">
-           <p  style={{ fontSize:'30px', fontWeight:'bold'}}>Free Delivery</p>
-       
-       </div>
-       <br></br>
+           <p  style={{ fontSize:'30px'}}>Free Delivery</p>
+  
+    </div>
+       <hr></hr> 
        <div className="subtotal">
-           <p style={{fontSize:"30px", fontWeight:'bold'}}>Subtotal</p>
+             <p>Subtotal</p>
          
-           <p style={{fontSize:"30px", fontWeight: 'bold'}}>Rs {data.reduce((acc,curr)=>{
-return acc + rate*Math.ceil(+curr.cart.price)
+           <p style={{ marginRight:"100px"}}>Rs {data.reduce((acc,curr)=>{
+return (rate*acc + Math.ceil(+curr.cart.price))
           },0)}.00 -/-</p>
        </div>
        
        <div className="total">
           <p>Total</p>
-          <p style={{marginRight:"24px"}}>Rs {data.reduce((acc,curr)=>{
+          <p style={{marginRight:"100px"}}>Rs {data.reduce((acc,curr)=>{
 return (rate*acc + Math.ceil(+curr.cart.price))
-          },0)} .00 -/-</p>
+          },0)}.00 -/-</p>
        </div>
        <hr></hr>
-      
-        
-       <button className="place_order" style={{width:'200px', marginLeft:'200px'}}   onClick={()=>navigate("/Payment")}>Procced To Payment</button>
-           
-           
-      
-       
 
-      
+       <Link to="/">
+                  <span style={{width:'200px',height:'100px',color:'whitesmoke', marginTop:'50px'}}>
+                    <ArrowBackIcon />
+                    Continue Shopping
+                  </span>
+                </Link>
+s
+       <button className="place_order" style={{width:'200px', marginLeft:'200px',marginBottom: '25px'}}   onClick={()=>navigate("/Payment")}>Procced To Payment</button>
+           
+     
+
+      </div>
             
         </div>
 
 
-</div>
 
 
     

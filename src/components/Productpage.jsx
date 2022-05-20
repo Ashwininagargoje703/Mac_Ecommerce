@@ -47,12 +47,8 @@ display:"flex"
      <h4 style={{fontSize:"12px",paddingLeft:"10px"}}> Rs {e.price}</h4>
      <Stack spacing={2}>
             <Rating value={e.rating.rate} precision={0.5} size='small' style={{color: 'green'}}   />
-            <button style={{ width:"150px",
-  height:"40px",
-  backgroundColor:'black',
-  color:"white",
-  fontSize:"20px",
-  fontFamily: "san"}}>See Details</button>
+            <button style={{ width:"100px", height:'30px',
+  backgroundColor:'black',marginBottom:'20px', marginLeft:'20px', color:'whitesmoke' }}>See Details</button>
         </Stack>
      
 

@@ -20,7 +20,7 @@ export const Productdetail = () => {
 
     useEffect(()=>{
        
-        axios.get(`http://localhost:8080/products/${id}`).then(({data})=>{
+        axios.get(`https://my-json-server-masai.herokuapp.com/products/${id}`).then(({data})=>{
             
             dispatch(selectedproduct(data))
             setCart(data)
@@ -28,7 +28,7 @@ export const Productdetail = () => {
         })
     },[])
     const handlesubmit=()=>{
-        axios.post("http://localhost:8080/cartproduct",{cart}).then(({data})=>{
+        axios.post("https://my-json-server-masai.herokuapp.com/cartproduct",{cart}).then(({data})=>{
             navigate("/cart")
         })
     }

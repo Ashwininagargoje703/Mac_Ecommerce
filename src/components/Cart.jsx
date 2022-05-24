@@ -30,14 +30,14 @@ export const Cart=()=>{
         handleCartDetail()
     },[])
     const handleCartDetail = ()=>{
-        axios.get("http://localhost:8080/cartproduct").then(({data})=>{
+        axios.get("https://my-json-server-masai.herokuapp.com/cartproduct").then(({data})=>{
             
             setData(data)
             })
     }
    
     const handleUserDetails = ()=>{
-        axios.get("http://localhost:8080/checkout").then(({data})=>{
+        axios.get("https://my-json-server-masai.herokuapp.com/checkout").then(({data})=>{
             
             setUserDetails(data)
             })
@@ -46,7 +46,7 @@ export const Cart=()=>{
     
     const handleRate=(id)=>{
         
-           axios.delete(`http://localhost:8080/cartproduct/${id}`)
+           axios.delete(`https://my-json-server-masai.herokuapp.com/cartproduct/${id}`)
            .then((res)=>{
             handleCartDetail()
            })

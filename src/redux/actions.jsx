@@ -1,3 +1,4 @@
+import axios from "axios"
 
   export const setproducts=(data)=>({
    
@@ -20,3 +21,13 @@ export const Login_detail=(data)=>({
   payload:data
 })
 
+export const navbar_cart=(data)=>({
+  type:"NAVBAR_CART",
+  payload:data
+})
+
+export const navCart = () => (dispatch) => {
+  axios.get("https://my-json-server-masai.herokuapp.com/cartproduct").then(({data})=>{
+    dispatch(navbar_cart(data))
+  }).then((res) => console.log("navv"))
+}

@@ -1,14 +1,14 @@
-
-
 const initialstate={
     product:[],
     selectedproduct:{},
     sortedData:[],
-    logindata:[]
+    logindata:{},
+    token:"",
+    cartData:[]
 
 }
- export const reducer=(state=initialstate,{type,payload})=>{
-     
+ export const Masaireducer=(state=initialstate,{type,payload})=>{
+    //  console.log("stste" , state)
                  
     switch(type){
         case 'SET_PRODUCT':
@@ -29,8 +29,15 @@ const initialstate={
             case "LOGIN_DETAIL":
                 return{
                     ...state,
-                    logindata:payload
+                    logindata:payload,
+                    token:payload
                 } 
+
+            case "NAVBAR_CART":
+                return{
+                    ...state,
+                    cartData: payload
+                }
            
             default:return state
                   

@@ -1,233 +1,216 @@
-// import axios from "axios";
-// import React, { useState } from "react";
-// import { Link } from "react-router-dom";
+import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+  TextField,
+  Typography,
+  Button,
+  Paper,
+} from "@mui/material";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { Navigate, useNavigate } from "react-router";
+import { useDispatch } from "react-redux";
+import { navCart } from "../redux/actions";
 
-// export const Checkout = () => {
+export const Checkout = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const [expanded, setExpanded] = useState(false);
+  const [input, setInput] = useState({
+    Address: "",
+    Name: "",
+    Pincode: "",
+  });
+  const [cart, setCart] = useState([]);
 
-//   const url = "http://localhost:8080/cardpayment";
-//   const [data, setData] = useState({
-//     cardNum: "",
-//     expiryDate: "",
-//     enterCvv: "",
-//     nameOnCard: "",
-//     tnc: "",
-//   });
+  const handlecheckout = (e) => {
+    const { id, value } = e.target;
+    setInput({
+      ...input,
+      [id]: value,
+    });
+  };
+  const handleSubmit = () => {
+    if (!input.Name || !input.Address || !input.Pincode) {
+      toast.error("Please enter something", { position: "top-center" });
+    } else {
+      axios
+        .post("https://ecommerce-masai.herokuapp.com/Checkout", {
+          name: input.Name,
+          Address: input.Address,
+          pincode: input.Pincode,
+        })
+        .then(({ data }) => {
+          toast.success("Address added now procced to payment", {
+            position: "top-center",
+          });
+          navigate("/payment");
+        })
+        .catch((e) => {
+          console.log(e.message);
+          toast.error("something is wrong", { position: "top-center" });
+        });
+    }
+  };
+  useEffect(() => {
+    handleCartDetail();
+  }, []);
+  const handleCartDetail = () => {
+    axios.get("https://my-json-server-masai.herokuapp.com/cartproduct").then(({ data }) => {
+      setCart(data);
+    });
+  };
+  const handleRate = (id) => {
+    axios.delete(`https://my-json-server-masai.herokuapp.com/cartproduct/${id}`).then((res) => {
+      handleCartDetail();
+      dispatch(navCart());
+    });
+  };
 
-//   const cart_total = JSON.parse(localStorage.getItem("cart_total"));
+  const handleChange = (isExpanded, panel) => {
+    setExpanded(isExpanded ? panel : false);
+  };
+  return (
+    <>
+      <div style={{ display: "flex", gap: "20px" }}>
+        <div style={{ width: "170%" }}>
+          <Accordion
+            id="accordion"
+            expanded={expanded === "panel1"}
+            onChange={(e, isExpanded) => handleChange(isExpanded, "panel1")}
+            sx={{ marginTop: "80px" }}
+          >
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              sx={{ marginTop: "80px" }}
+            >
+              <Typography variant="h5">Name</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <TextField
+                variant="outlined"
+                label="Enter Name"
+                value={input.Name}
+                fullWidth
+                onChange={handlecheckout}
+                id="Name"
+              />
+            </AccordionDetails>
+          </Accordion>
+          <Accordion
+            id="accordion"
+            expanded={expanded === "panel2"}
+            onChange={(e, isExpanded) => handleChange(isExpanded, "panel2")}
+          >
+            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+              <Typography variant="h5">Address</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <TextField
+                variant="outlined"
+                label="Enter Address"
+                value={input.Address}
+                fullWidth
+                onChange={handlecheckout}
+                id="Address"
+              />
+            </AccordionDetails>
+          </Accordion>
+          <Accordion
+            id="accordion"
+            expanded={expanded === "panel3"}
+            onChange={(e, isExpanded) => handleChange(isExpanded, "panel3")}
+          >
+            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+              <Typography variant="h5">Pincode</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <TextField
+                variant="outlined"
+                label="Enter Pincode"
+                value={input.Pincode}
+                type="Number"
+                fullWidth
+                onChange={handlecheckout}
+                id="Pincode"
+              />
+            </AccordionDetails>
+          </Accordion>
+          <Button
+            variant="contained"
+            fullWidth
+            sx={{ bgcolor: "black", marginTop: "50px" }}
+            onClick={handleSubmit}
+          >
+            Submit
+          </Button>
+        </div>
 
-//   const handleInduptChange = (e) => {
-//     const newData = { ...data };
-//     newData[e.target.id] = e.target.value;
-//     setData(newData);
-//     console.log(newData);
-//   };
+        <Paper>
+          <div style={{ marginTop: "80px" }}>
+            <div
+              style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)" }}
+            >
+              {cart.map((e) => (
+                <div>
+                  <div style={{ textAlign: "center" }} key={e.id}>
+                    <p style={{ fontWeight: "500", fontSize: "14px" }}>
+                      {e.title}
+                    </p>
+                  </div>
+                  <div style={{ textAlign: "center" }}>
+                    <img
+                      src={e.image}
+                      alt=""
+                      style={{ width: "16%", height: "50%" }}
+                    />
+                    <p
+                      style={{
+                        fontWeight: "500",
+                        fontSize: "20px",
+                        color: "green",
+                        margin: "0px",
+                      }}
+                    >
+                      Rs {e.price} -/-
+                    </p>
 
-//   const submit = (e) => {
-//     e.preventDefault();
-//     axios
-//       .post(url, {
-//         cardNum: data.cardNum,
-//         expiryDate: data.expiryDate,
-//         enterCvv: data.enterCvv,
-//         nameOnCard: parseInt(data.nameOnCard),
-//         tnc: data.tnc,
-//       })
-//       .then((res) => {
-//         alert("payment successfuly done");
+                    <p
+                      style={{
+                        margin: "10px",
+                        fontSize: "14px",
+                        fontWeight: "500",
+                      }}
+                    >
+                      {e.category}
+                    </p>
+                    <button
+                      onClick={() => handleRate(e.id)}
+                      style={{
+                        marginBottom: "10px",
+                        backgroundColor: "black",
+                        border: "none",
+                        outline: "none",
+                        color: "white",
+                        padding: "10px",
+                        borderRadius: "5px",
+                      }}
+                    >
+                      Remove from cart
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Paper>
+      </div>
 
-//         console.log(res.data);
-//       });
-//   };
-
-//   return (
-//     <div
-//       style={{
-//         display: "flex",
-//         width: "60%",
-//         margin: "auto",
-//         marginTop: "150px",
-//         boxShadow: "5px 5px 15px gray",
-//         borderRadius: "15px",
-//       }}
-//     >
-//       <div
-//         style={{
-//           width: "40%",
-//           padding: "10px",
-//           boxShadow: "5px 5px 5px gray",
-//           borderRadius: "15px",
-//         }}
-//       >
-//         <div
-//           style={{
-//             display: "flex",
-//             padding: "2px",
-//             boxShadow: "0px 2px 0px whitesmoke",
-//           }}
-//         >
-//           <div
-//             style={{
-//               width: "50%",
-//               marginLeft: "50px",
-//               textAlign: "right",
-//             }}
-//           >
-//             <h2>SHOPING</h2>
-//           </div>
-//         </div>
-//         <div>
-//           <p style={{ fontSize: "30px", fontWeight: "500" }}>Enter new card</p>
-//           <p style={{ fontWeight: "500" }}>Total Payable Amount₹{cart_total}</p>
-//           <p style={{ fontWeight: "0" }}>Transaction Id: 100110125</p>
-//         </div>
-//       </div>
-//       <div>
-//         <div
-//           style={{
-//             height: "35px",
-//             display: "flex",
-//             padding: "2px",
-//             margin: "2px",
-//             boxShadow: "0px 2px 0px whitesmoke",
-//           }}
-//         >
-//           <div
-//             style={{
-//               width: "50%",
-//               margin: "2px",
-//             }}
-//           >
-//             Enter new card
-//           </div>
-//           <div
-//             style={{
-//               width: "50%",
-//               textAlign: "right",
-//             }}
-//           >
-//             <select id="language">
-//               <option value="English">English</option>
-//               <option value="Hindi">Hindi</option>
-//             </select>
-//           </div>
-//         </div>
-
-//         <div>
-//           <form
-//             style={{ width: "80%", margin: "auto", marginTop: "20px" }}
-//             onSubmit={(e) => submit(e)}
-//           >
-//             <label>New Card</label>
-//             <br />
-//             <input
-//               style={{
-//                 height: "25px",
-//                 marginTop: "10px",
-//                 marginBottom: "10px",
-//                 width: "100%",
-//               }}
-//               onChange={(e) => handleInduptChange(e)}
-//               id="cardNum"
-//               value={data.cardNum}
-//               placeholder="Enter Card Number"
-//               type="text"
-//               minLength="16"
-//               maxLength="16"
-//               required
-//             />
-//             <div style={{ display: "flex", gap: "10px" }}>
-//               <div>
-//                 <label>Expiry</label>
-//                 <input
-//                   style={{
-//                     height: "25px",
-//                     marginTop: "10px",
-//                     marginBottom: "10px",
-//                   }}
-//                   onChange={(e) => handleInduptChange(e)}
-//                   id="expiryDate"
-//                   value={data.expiryDate}
-//                   placeholder="MM/YY"
-//                   type="text"
-//                   minLength="4"
-//                   maxLength="4"
-//                   required
-//                 />
-//               </div>
-//               <div>
-//                 <label>CVV</label>
-//                 <input
-//                   style={{
-//                     height: "25px",
-//                     marginTop: "10px",
-//                     marginBottom: "10px",
-//                   }}
-//                   onChange={(e) => handleInduptChange(e)}
-//                   id="enterCvv"
-//                   value={data.enterCvv}
-//                   placeholder="Enter CVV"
-//                   type="text"
-//                   minLength="3"
-//                   maxLength="3"
-//                   required
-//                 />
-//               </div>
-//             </div>
-//             <label>Name on Card</label>
-//             <br />
-//             <input
-//               style={{
-//                 height: "25px",
-//                 marginTop: "10px",
-//                 marginBottom: "10px",
-//                 width: "100%",
-//               }}
-//               onChange={(e) => handleInduptChange(e)}
-//               id="nameOnCard"
-//               value={data.nameOnCard}
-//               placeholder="Name as on card"
-//               type="text"
-//               required
-//             />
-//             <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-//               <input
-//                 style={{
-//                   height: "25px",
-//                   marginTop: "10px",
-//                   marginBottom: "10px",
-//                 }}
-//                 onChange={(e) => handleInduptChange(e)}
-//                 id="tnc"
-//                 placeholder="Name as on card"
-//                 type="checkbox"
-//               />
-//               <p style={{ fontSize: "15px", color: "grey" }}>
-//                 Save this option securely for faster payment
-//               </p>
-//             </div>
-//             <Link to={"/orderdone"}>
-//               <button
-//                 // onClick={() => {
-//                 //   setIsToggled(!isToggled);
-//                 // }}
-//                 style={{
-//                   marginBottom: "25px",
-//                   border: "none",
-//                   color: "Window",
-//                   backgroundColor: "#59b4ff",
-//                   width: "100%",
-//                   height: "35px",
-//                   borderRadius: "5px",
-//                   cursor: "pointer",
-//                 }}
-//                 type="submit"
-//               >
-//                 BUY NOW
-//               </button>
-//             </Link>
-//           </form>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
+      <ToastContainer />
+    </>
+  );
+};

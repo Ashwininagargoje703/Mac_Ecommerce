@@ -39,7 +39,7 @@ export const Checkout = () => {
       toast.error("Please enter something", { position: "top-center" });
     } else {
       axios
-        .post("https://my-json-server-masai.herokuapp.com/Checkout", {
+        .post("https://ecommerce-masai.herokuapp.com/Checkout", {
           name: input.Name,
           Address: input.Address,
           pincode: input.Pincode,

@@ -77,7 +77,7 @@ export const Checkout = () => {
   return (
     <>
       <div style={{ display: "flex", gap: "20px" }}>
-        <div style={{ width: "170%" }}>
+        <div style={{ width: "50%" }}>
           <Accordion
             id="accordion"
             expanded={expanded === "panel1"}
@@ -166,7 +166,7 @@ export const Checkout = () => {
                     <img
                       src={e.image}
                       alt=""
-                      style={{ width: "16%", height: "50%" }}
+                      style={{ width: "25%", height: "50%" }}
                     />
                     <p
                       style={{

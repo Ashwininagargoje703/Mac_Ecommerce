@@ -3,6 +3,10 @@
     gap:80px;
     height: 50%;
 }
+.container1{
+    display:flex;
+ width: 35%; 
+}
 
 .Payment{
     text-align: left;

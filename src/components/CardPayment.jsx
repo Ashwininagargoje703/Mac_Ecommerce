@@ -71,15 +71,17 @@ export const CardPayment = () => {
   return (
     <>
       {modal && <Modal onClose={() => setModal(false)} />}
-      <div className="container" style={{marginLeft:"30%", background:"whitesmoke"}}>
-        <div style={{ width: "50%" }}>
-          <div className="Payment" style={{ marginTop: "10%" }}>
-            <p className="del">Deliverd to this address</p>
-   
-          </div>
-<hr></hr>
+      <div className="container1" style={{marginLeft:"30%" , backgroundColor:'whitesmoke'}}>
+        <div>
+          <div className="Payment" style={{ marginTop: "20%" }}>
+            <p className="del" style={{fontWeight:'bolder', fontSize:'30px'}}>Deliverd to this address</p>
+           <br></br>
+     </div>
+     <hr></hr>
+
           <div className="accordion">
-            <div style={{ lineHeight: "10px",  }}>
+  
+            <div style={{ lineHeight: "10px" }}>
               <p className="userrr">
                 {"NAME:             "}
                 {userDetail[userDetail.length - 1]?.name}
@@ -110,17 +112,17 @@ export const CardPayment = () => {
             </div>
           </div>
           <hr></hr>
-          
+{/*           
            <div className="Payment">
             <p>Payment</p>
-          </div> 
+          </div>  */}
 {/*           
           <div style={{ marginLeft: "30px" }}> */}
-            <div className="method">
+            <div className="method" style={{backgroundColor:'whitesmoke',}}>
               <p>Add Payment Method</p>
               <button
                 className="button"
-                style={{ marginLeft: "300px", marginTop: "10px", backgroundColor:"black", color:'white'}}
+                style={{ marginLeft: "300px", marginTop: "10px", backgroundColor:"black", color:'white', width:'100px'}}
                 onClick={() => {
                   setModal(true);
                 }}
@@ -130,11 +132,12 @@ export const CardPayment = () => {
             </div>
             <hr></hr>
           
-            <hr></hr>
+          
           </div>
        
  
           </div>
+          
         {/* </div> */}
       
        

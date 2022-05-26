@@ -23,7 +23,7 @@ export const Debit = ({ onClose }) => {
     });
   };
   const handlesubmit = () => {
-      axios.post("https://ecommerce-masai.herokuapp.com/payment",{data}).then(({data})=>{
+      axios.post("https://my-json-server-masai.herokuapp.com/payment",{data}).then(({data})=>{
         alert("Your credentials are Saved Now you can placed your order");
       }).catch((e)=>{
           console.log(e)

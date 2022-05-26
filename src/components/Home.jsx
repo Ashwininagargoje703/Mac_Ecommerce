@@ -77,7 +77,7 @@ export const Home = () => {
         <>
           {loader ? (
             <img
-              src="https://miro.medium.com/max/1400/1*CsJ05WEGfunYMLGfsT2sXA.gif"
+              src="https://media1.giphy.com/media/3o7bu3XilJ5BOiSGic/giphy.gif"
               style={{ width: "100%", height: "100%" }}
               alt=""
             />

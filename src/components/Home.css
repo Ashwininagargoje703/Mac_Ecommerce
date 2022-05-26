@@ -42,7 +42,7 @@
         width: 100%;
     }
     .imgdiv img{
-        width: 148%;
+        width: 100%;
         height: 268px;
         object-fit: contain;
     }

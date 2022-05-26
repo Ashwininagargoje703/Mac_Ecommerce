@@ -8,7 +8,7 @@ const initialstate={
 
 }
  export const Masaireducer=(state=initialstate,{type,payload})=>{
-    //  console.log("stste" , state)
+ 
                  
     switch(type){
         case 'SET_PRODUCT':

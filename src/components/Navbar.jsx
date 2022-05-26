@@ -21,7 +21,7 @@ import { navCart } from "../redux/actions";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-//  import { Login_detail } from "../redux/actions";
+
 
 
 
@@ -55,7 +55,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: 'inherit',
   '& .MuiInputBase-input': {
     padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
+
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create('width'),
     width: '100%',
@@ -72,8 +72,7 @@ export const Navbar=()=>{
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
   const token = useSelector((e) => e.MasaiReducer.token);
-  // const localToken = localStorage.getItem("token");
-  // dispatch(Login_detail(localToken));
+  
   const cartDataRedux = useSelector((e) => e.MasaiReducer.cartData);
   console.log("dataaa redux", cartDataRedux.length);
 
@@ -93,13 +92,6 @@ export const Navbar=()=>{
     });
   };
 
-  // const handleLogin = () => {
-  //   navigate("/login");
-  // };
-  // const handleLogout = () => {
-  //   dispatch(Login_detail({}));
-  //   localStorage.setItem("token", "");
-  // };
 
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -119,27 +111,7 @@ export const Navbar=()=>{
   };
 
 
-  // const menuId = 'primary-search-account-menu';
-  // const renderMenu = (
-  //   <Menu
-  //     anchorEl={anchorEl}
-  //     anchorOrigin={{
-  //       vertical: 'top',
-  //       horizontal: 'right',
-  //     }}
-  //     id={menuId}
-  //     keepMounted
-  //     transformOrigin={{
-  //       vertical: 'top',
-  //       horizontal: 'right',
-  //     }}
-  //     open={isMenuOpen}
-  //     onClose={handleMenuClose}
-  //   >
-  //     <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-  //     <MenuItem onClick={handleMenuClose}>My account</MenuItem>
-  //   </Menu>
-  // );
+
 
   const mobileMenuId = 'primary-search-account-menu-mobile';
   const renderMobileMenu = (
@@ -212,7 +184,7 @@ export const Navbar=()=>{
               size="large"
               edge="end"
               aria-label="account of current user"
-              // aria-controls={menuId}
+         
               aria-haspopup="true"
               
               color="inherit"
@@ -230,7 +202,7 @@ export const Navbar=()=>{
               size="large"
               edge="end"
               aria-label="account of current user"
-              // aria-controls={menuId}
+         
               aria-haspopup="true"
               color="inherit"
             onClick={()=>navigate("/signup")} 
@@ -253,7 +225,7 @@ export const Navbar=()=>{
         </Toolbar>
       </AppBar>
       {renderMobileMenu}
-      {/* {renderMenu} */}
+   
     </Box>
   );
 }

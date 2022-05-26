@@ -19,13 +19,12 @@ export const Cart = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  // const userData = useSelector((e) => e.logindata);
-
+  
   const [data, setData] = useState([]);
   const [userDetail, setUserDetails] = useState({});
   console.log(userDetail, "user");
   const [modal, setModal] = useState(false);
-  // const [rate,setRate]=useState(1)
+
 
   useEffect(() => {
     handleUserDetails();

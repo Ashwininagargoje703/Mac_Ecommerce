@@ -25,7 +25,7 @@ export const CardPayment = () => {
   const [userDetail, setUserDetails] = useState({});
   console.log(userDetail, "user");
   const [modal, setModal] = useState(false);
-  // const [rate,setRate]=useState(1)
+  
 
   useEffect(() => {
     handleUserDetails();

@@ -5,13 +5,12 @@ import axios from "axios";
 import Carousel from "react-elastic-carousel";
 import { Paper, Button } from "@mui/material";
 import { setproducts } from "../redux/actions";
-// import Sidebar from "./Sidebar";
 import "./Home.css";
 import { Stack, Rating } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import {Link}from "react-router-dom"
 import{Footer} from "./Footer";
-import { Login_detail } from "../redux/actions";
+
 
 export const Home = () => {
   const dispatch = useDispatch();

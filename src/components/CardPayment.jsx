@@ -71,55 +71,61 @@ export const CardPayment = () => {
   return (
     <>
       {modal && <Modal onClose={() => setModal(false)} />}
-      <div className="container">
+      <div className="container" style={{marginLeft:"30%", background:"whitesmoke"}}>
         <div style={{ width: "50%" }}>
           <div className="Payment" style={{ marginTop: "10%" }}>
-            <p className="masai">Masai</p>
-            <p className="storee">Store</p>
+            <p className="del">Deliverd to this address</p>
+   
           </div>
-
+<hr></hr>
           <div className="accordion">
-            <div style={{ lineHeight: "10px", bgcolour:"green" }}>
+            <div style={{ lineHeight: "10px",  }}>
               <p className="userrr">
-                {" "}
+                {"NAME:             "}
                 {userDetail[userDetail.length - 1]?.name}
               </p>
+              <br></br>
+              <br></br>
               <p className="userrr">
-                {" "}
+                {"ADDRESS:                "}
                 {userDetail[userDetail.length - 1]?.Address}
                 </p>
+                <br></br>
+                <br></br>
                 <p className="userrr">
-                {" "}
+                {"PINCODE:                "}
                 {userDetail[userDetail.length - 1]?.pincode}
               </p>
+              <br></br>
+              <br></br>
             </div>
           </div>
           <hr></hr>
 
-          <div className="city" style={{ marginTop: "10px" }}>
+          <div className="city" style={{ marginTop: "10px", height:'20%' }}>
             <div style={{ lineHeight: "10px" }}>
-              <p className="userrr">Meet at Door</p>
-              <p style={{ marginLeft: "30px", color: "green" }}>
-                Add delivery instructions
-              </p>
+              <p className="userrr">delivery At Home</p>
+              <br></br>
+            
             </div>
           </div>
           <hr></hr>
-
-          <div className="Payment">
+          
+           <div className="Payment">
             <p>Payment</p>
-          </div>
-          <div style={{ marginLeft: "30px" }}>
+          </div> 
+{/*           
+          <div style={{ marginLeft: "30px" }}> */}
             <div className="method">
               <p>Add Payment Method</p>
               <button
                 className="button"
-                style={{ marginLeft: "300px", marginTop: "10px" }}
+                style={{ marginLeft: "300px", marginTop: "10px", backgroundColor:"black", color:'white'}}
                 onClick={() => {
                   setModal(true);
                 }}
               >
-                Edit
+                PAY
               </button>
             </div>
             <hr></hr>
@@ -129,7 +135,7 @@ export const CardPayment = () => {
        
  
           </div>
-        </div>
+        {/* </div> */}
       
        
           

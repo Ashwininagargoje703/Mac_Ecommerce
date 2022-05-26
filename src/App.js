@@ -7,7 +7,7 @@ import { Productpage } from './components/Productpage';
 import {Routes,Route} from 'react-router-dom'
 import {Productdetail} from './components/Productdetail';
 import { Cart } from "./components/Cart";
-
+// import {Footer} from './components/Footer.jsx'
 import { Checkout } from './components/Checkout';
 import { OrderPlaced } from "./components/OrderDone/OrderDone";
  import { CardPayment } from "./components/CardPayment";

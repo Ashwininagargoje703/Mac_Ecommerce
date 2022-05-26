@@ -25,7 +25,7 @@ export const Cart = () => {
   const [userDetail, setUserDetails] = useState({});
   console.log(userDetail, "user");
   const [modal, setModal] = useState(false);
-   const [rate,setRate]=useState(1)
+  // const [rate,setRate]=useState(1)
 
   useEffect(() => {
     handleUserDetails();
@@ -72,11 +72,11 @@ export const Cart = () => {
     <>
     
       {modal && <Modal onClose={() => setModal(false)} />}
-      <div className="container">
-        <div style={{ width: "60%" }}>
-           <div className="Payment" style={{ marginTop: "10%" }}>
-            <p >Your</p>
-            <p>Items</p>
+      <div className="container" >
+        <div style={{ width: "50%" }}>
+           <div className="Payment" style={{ marginTop: "20%", width: "50%" }}>
+            <p style={{ fontSize:'30px' , fontWeight:'bold'}}>Your  Items</p>
+            
           </div>
           <hr></hr> 
        
@@ -149,7 +149,7 @@ export const Cart = () => {
         </div>
        
 
-        <div className="payment_detail" style={{ marginTop:'50px' }} >
+        <div className="payment_detail" style={{ marginTop:'8%', marginRight: '20px' }} >
   
         <div className="offer_line">
            <p  style={{ fontSize:'30px', marginLeft:'60px'}}>Delivery Charges</p>
@@ -157,47 +157,34 @@ export const Cart = () => {
     </div>
        <hr></hr> 
           <div className="subtotal">
-            <p>Subtotal</p>
+            <p  style={{ fontSize: "20px" }}>Subtotal</p>
 
-            <p style={{ fontSize: "15px" }}>
-              Rs{" "}
+            <p style={{ fontSize: "20px", marginLeft:'50%'}}>
+            ₹{" "}
               {data.reduce((acc, curr) => {
                 return acc + curr.qty * Math.ceil(+curr.price);
               }, 0)}
               .00 -/-
             </p>
+            <br></br>
           </div>
-          <div className="subtotal">
-            <p>Promotion</p>
-            <p style={{ color: "green" }}> - Rs 39.00-/-</p>
-          </div>
-          <div className="subtotal">
-            <p>Taxes & Fees</p>
-            <p style={{ fontSize: "15px" }}>Rs 57.00-/-</p>
-          </div>
+     <hr></hr>
           <div className="subtotal">
             <p>Delivery Fee</p>
-            <p style={{ fontSize: "15px" }}>Rs 49.00-/-</p>
+            <p style={{ fontSize: "20px" }}> ₹ 49.00-/-</p>
           </div>
           <div className="subtotal">
-            <p>CA driver benefits</p>
-            <p style={{ fontSize: "15px" }}>Rs 29.00-/-</p>
+            <p> ₹ 100  Discount on 1st order</p>
+            <p style={{ color: "red" }}> - ₹ 100.00-/-</p>
           </div>
-
-          <div className="subtotal">
-            <p>Temporary fuel surcharge</p>
-            <p style={{ fontSize: "15px" }}>Rs 19.00-/-</p>
-          </div>
-          <div style={{ width: "400px", marginLeft: "100px" }}>
-            
-          </div>
+       <br></br>
           <hr></hr>
           <div className="total">
             <p>Total</p>
             <p style={{ marginRight: "24px" }}>
-              Rs{" "}
+            ₹{" "}
               {data.reduce((acc, curr) => {
-                return acc + curr.qty * Math.ceil(+curr.price) + 154 / 2;
+                return acc + curr.qty * Math.ceil(+curr.price) - 100+49;
               }, 0)}{" "}
               -/-
             </p>
@@ -205,7 +192,7 @@ export const Cart = () => {
           <hr></hr>
 
           <div className="payment_order">
-          <button className="place_order" style={{width:'250px', marginBottom:'50px'}}   onClick={()=>navigate("/checkout")}>Procced To Checkout</button>
+          <button className="place_order" style={{width:'250px', marginBottom:'50px', marginTop:'10px'}}   onClick={()=>navigate("/checkout")}>Procced To Checkout</button>
     
           </div>
         </div>

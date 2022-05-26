@@ -55,19 +55,25 @@ export const Productpage = () => {
                     alignItems: "center",
                   }}
                 />
+                <br></br>
                 <h3 style={{ fontSize: "14px", paddingLeft: "10px" }}>
                   {e.title}
                 </h3>
+                <br></br>
                 <h4 style={{ fontSize: "12px", paddingLeft: "10px" }}>
                   {" "}
                   Rs {e.price}
                 </h4>
+                <br></br>
                 <Stack spacing={2}>
-                  <Rating value={e.rating} precision={0.5} size="small" />
+                <Rating value={e.rating.rate} precision={0.5} size='small' style={{color: 'green'}}   />
                 </Stack>
+  
                 <p style={{ color: "red", paddingLeft: "10px" }}>
-                  20% off for students
+                ₹ 100 Off on 1st Order
                 </p>
+                <button style={{ width:"100px", height:'30px',
+  backgroundColor:'black',marginBottom:'20px', marginLeft:'20px', color:'whitesmoke' }}>See Details</button>
               </div>
             ))}
           </div>

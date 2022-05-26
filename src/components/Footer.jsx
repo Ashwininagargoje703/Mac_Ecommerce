@@ -1,95 +1,23 @@
-import * as React from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import CardHeader from "@mui/material/CardHeader";
-import CssBaseline from "@mui/material/CssBaseline";
-import Grid from "@mui/material/Grid";
-import StarIcon from "@mui/icons-material/StarBorder";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Link from "@mui/material/Link";
-import GlobalStyles from "@mui/material/GlobalStyles";
-import Container from "@mui/material/Container";
-
-const footers = [
-  {
-    title: "Company",
-    description: ["Team", "History", "Contact us", "Locations"],
-  },
-  {
-    title: "Features",
-    description: [
-      "Cool stuff",
-      "Random feature",
-      "Team feature",
-      "Developer stuff",
-      "Another one",
-    ],
-  },
-  {
-    title: "Resources",
-    description: [
-      "Resource",
-      "Resource name",
-      "Another resource",
-      "Final resource",
-    ],
-  },
-  {
-    title: "Legal",
-    description: ["Privacy policy", "Terms of use"],
-  },
-];
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center">
-      {"Copyright © "}
-      <Link color="inherit" href="www.masaischool.com">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
+import "./Footer.css";
+import DiamondIcon from '@mui/icons-material/Diamond';
 export const Footer = () => {
-  return (
-    <Container
-      Width="100%"
-      component="footer"
-      sx={{
-        borderTop: (theme) => `1px solid ${theme.palette.divider}`,
-        mt: 8,
-        py: [3, 6],
-        position: "fixed",
-        bgcolor: "black",
-        color: "white",
-      }}
-    >
-      <Grid container spacing={4} justifyContent="space-evenly">
-        {footers.map((footer) => (
-          <Grid item xs={6} sm={3} key={footer.title}>
-            <Typography variant="h6" sx={{ color: "white" }} gutterBottom>
-              {footer.title}
-            </Typography>
-            <ul>
-              {footer.description.map((item) => (
-                <li key={item}>
-                  <Link href="#" variant="subtitle1" color="text.secondary">
-                    {item}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </Grid>
-        ))}
-      </Grid>
-      <Copyright sx={{ mt: 5, color: "white" }} />
-    </Container>
-  );
-};
+    return (
+        <div className="footer_main">
+            <div className="footer">
+                <DiamondIcon style={{fontSize:"200px", color:"black", marginLeft:"40px"}}/>
+                <div className="Contact_info">
+                    <p>Contact Information</p>
+                    <p>+917842254142</p>
+                    <p>Spring road 41 street New Delhi- 110022</p>
+                </div>
+                <div className="Contact_info">
+                    <p>Opning Hours</p>
+                    <p>Sunday-Saturday <span>10AM-5PM</span></p>
+                    <p>Monday-Friday <span>10AM-8PM</span></p>
+                </div>
+            </div>
+           <p className="footer_p">Choose shoes Shop, Inc for hand-arranged fresh shoes delivery today in Spring road, Khajan road</p>
+         
+        </div>
+    )
+}

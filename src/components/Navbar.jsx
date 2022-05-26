@@ -17,6 +17,13 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import {useNavigate} from "react-router-dom"
+import { navCart } from "../redux/actions"; 
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+//  import { Login_detail } from "../redux/actions";
+
+
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -60,11 +67,39 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export const Navbar=()=>{
   const navigate=useNavigate()
+  const dispatch = useDispatch();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
+  const token = useSelector((e) => e.MasaiReducer.token);
+  // const localToken = localStorage.getItem("token");
+  // dispatch(Login_detail(localToken));
+  const cartDataRedux = useSelector((e) => e.MasaiReducer.cartData);
+  console.log("dataaa redux", cartDataRedux.length);
+
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    handleCartDetail();
+    dispatch(navCart());
+  }, []);
+
+  const handleCartDetail = () => {
+    axios.get("https://my-json-server-masai.herokuapp.com/cartproduct").then(({ data }) => {
+      setData(data);
+    });
+  };
+
+  // const handleLogin = () => {
+  //   navigate("/login");
+  // };
+  // const handleLogout = () => {
+  //   dispatch(Login_detail({}));
+  //   localStorage.setItem("token", "");
+  // };
 
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -83,27 +118,28 @@ export const Navbar=()=>{
     setMobileMoreAnchorEl(event.currentTarget);
   };
 
-  const menuId = 'primary-search-account-menu';
-  const renderMenu = (
-    <Menu
-      anchorEl={anchorEl}
-      anchorOrigin={{
-        vertical: 'top',
-        horizontal: 'right',
-      }}
-      id={menuId}
-      keepMounted
-      transformOrigin={{
-        vertical: 'top',
-        horizontal: 'right',
-      }}
-      open={isMenuOpen}
-      onClose={handleMenuClose}
-    >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
-    </Menu>
-  );
+
+  // const menuId = 'primary-search-account-menu';
+  // const renderMenu = (
+  //   <Menu
+  //     anchorEl={anchorEl}
+  //     anchorOrigin={{
+  //       vertical: 'top',
+  //       horizontal: 'right',
+  //     }}
+  //     id={menuId}
+  //     keepMounted
+  //     transformOrigin={{
+  //       vertical: 'top',
+  //       horizontal: 'right',
+  //     }}
+  //     open={isMenuOpen}
+  //     onClose={handleMenuClose}
+  //   >
+  //     <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+  //     <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+  //   </Menu>
+  // );
 
   const mobileMenuId = 'primary-search-account-menu-mobile';
   const renderMobileMenu = (
@@ -176,12 +212,17 @@ export const Navbar=()=>{
               size="large"
               edge="end"
               aria-label="account of current user"
-              aria-controls={menuId}
+              // aria-controls={menuId}
               aria-haspopup="true"
               
               color="inherit"
               onClick={()=>navigate("/cart")} 
             >
+                  <Badge
+                  badgeContent={cartDataRedux.length}
+                  color="error"
+                  sx={{ marginBottom: "35px" }}
+                ></Badge>
               <ShoppingCartIcon />
             </IconButton>
             <IconButton
@@ -189,11 +230,10 @@ export const Navbar=()=>{
               size="large"
               edge="end"
               aria-label="account of current user"
-              aria-controls={menuId}
+              // aria-controls={menuId}
               aria-haspopup="true"
               color="inherit"
-              onClick={()=>navigate("/signup")} 
-              
+            onClick={()=>navigate("/signup")} 
             >
               <AccountCircle   />
             </IconButton>
@@ -213,7 +253,7 @@ export const Navbar=()=>{
         </Toolbar>
       </AppBar>
       {renderMobileMenu}
-      {renderMenu}
+      {/* {renderMenu} */}
     </Box>
   );
 }

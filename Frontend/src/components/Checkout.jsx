@@ -12,13 +12,16 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Navigate, useNavigate } from "react-router";
+
 import { useDispatch } from "react-redux";
 import { navCart } from "../redux/actions";
+import { useNavigate } from "react-router-dom";
 
 export const Checkout = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+ 
+
   const [expanded, setExpanded] = useState(false);
   const [input, setInput] = useState({
     Address: "",
@@ -39,7 +42,7 @@ export const Checkout = () => {
       toast.error("Please enter something", { position: "top-center" });
     } else {
       axios
-        .post("https://my-json-server-masai.herokuapp.com/Checkout", {
+        .post("https://ecommerce-masai.herokuapp.com/Checkout", {
           name: input.Name,
           Address: input.Address,
           pincode: input.Pincode,
@@ -214,3 +217,4 @@ export const Checkout = () => {
     </>
   );
 };
+

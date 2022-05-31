@@ -77,7 +77,7 @@ export const Home = () => {
         <>
           {loader ? (
             <img
-              src="https://media1.giphy.com/media/3o7bu3XilJ5BOiSGic/giphy.gif"
+              src="https://media1.giphy.com/media/3o7bu3XilJ5BOiSGic/gziphy.gif"
               style={{ width: "100%", height: "100%" }}
               alt=""
             />

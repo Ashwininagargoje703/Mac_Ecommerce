@@ -33,7 +33,7 @@ export const CardPayment = () => {
     handleCartDetail();
   }, []);
   const handleCartDetail = () => {
-    axios.get("https://ecommerce-masai.herokuapp.com/cartproduct").then(({ data }) => {
+    axios.get("https://my-json-server-masai.herokuapp.com/cartproduct").then(({ data }) => {
       const newData = data.map((product) => ({
         ...product,
         qty: 1,
@@ -49,7 +49,7 @@ export const CardPayment = () => {
   };
 
   const handleRate = (id) => {
-    axios.delete(`https://ecommerce-masai.herokuapp.com/cartproduct/${id}`).then((res) => {
+    axios.delete(`https://my-json-server-masai.herokuapp.com/cartproduct/${id}`).then((res) => {
       handleCartDetail();
     });
   };

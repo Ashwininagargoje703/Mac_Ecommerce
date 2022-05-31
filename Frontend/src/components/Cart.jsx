@@ -42,7 +42,7 @@ export const Cart = () => {
   };
 
   const handleUserDetails = () => {
-    axios.get("https://my-json-server-masai.herokuapp.com/checkout").then(({ data }) => {
+    axios.get("https://ecommerce-masai.herokuapp.com/checkout").then(({ data }) => {
       setUserDetails(data);
     });
   };

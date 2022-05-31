@@ -39,7 +39,7 @@ export const Productdetail = () => {
       .then(({ data }) => {
         dispatch(navCart());
         dispatch(navCart());
-        navigate("/cart");
+        navigate("/checkout");
         
       })
       .catch((e) => {

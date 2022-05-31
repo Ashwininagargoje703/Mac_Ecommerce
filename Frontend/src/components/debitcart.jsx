@@ -1,12 +1,15 @@
 import "./debitcard.css";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 export const Debit = ({ onClose }) => {
+    
   const navigate = useNavigate();
+
   const [data, setData] = useState({
+
       card_no:"",
       cvv:"",
       date:""
@@ -23,8 +26,9 @@ export const Debit = ({ onClose }) => {
     });
   };
   const handlesubmit = () => {
-      axios.post("https://my-json-server-masai.herokuapp.com/payment",{data}).then(({data})=>{
+      axios.post("https://ecommerce-masai.herokuapp.com/payment",{data}).then(({data})=>{
         alert("Your credentials are Saved Now you can placed your order");
+        navigate("/orderdone");
       }).catch((e)=>{
           console.log(e)
       })
@@ -54,7 +58,7 @@ export const Debit = ({ onClose }) => {
           onChange={handlechange}
           value={data.date}
         />
-        <button className="succes_button" onClick={()=>navigate("/orderdone")}>
+        <button className="succes_button" onClick={handlesubmit}>
           Pay
         </button>
       </div>

@@ -66,14 +66,14 @@ export const Productpage = () => {
                 </h4>
                 <br></br>
                 <Stack spacing={2}>
-                <Rating value={e.rating.rate} precision={0.5} size='small' style={{color: 'green'}}   />
+                <Rating value={e.rating.rate} precision={0.5} size='large' style={{color: 'green'}}   />
                 </Stack>
   
                 <p style={{ color: "red", paddingLeft: "10px" }}>
                 ₹ 100 Off on 1st Order
                 </p>
-                <button style={{ width:"100px", height:'30px',
-  backgroundColor:'black',marginBottom:'20px', marginLeft:'20px', color:'whitesmoke' }}>See Details</button>
+                {/* <button style={{ width:"100px", height:'30px',
+  backgroundColor:'black',marginBottom:'20px', marginLeft:'20px', color:'whitesmoke' }}>See Details</button> */}
               </div>
             ))}
           </div>

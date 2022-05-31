@@ -188,7 +188,7 @@ export const Navbar=()=>{
               aria-haspopup="true"
               
               color="inherit"
-              onClick={()=>navigate("/checkout")} 
+              onClick={()=>navigate("/cart")} 
             >
                   <Badge
                   badgeContent={cartDataRedux.length}

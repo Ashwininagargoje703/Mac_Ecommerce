@@ -151,8 +151,8 @@ export const Cart = () => {
         <div className="payment_detail" style={{ marginTop:'8%', marginRight: '20px' }} >
   
         <div className="offer_line">
-           <p  style={{ fontSize:'30px', marginLeft:'60px'}}>Delivery Charges</p>
-  
+           <p  style={{ fontSize:'30px', marginLeft:'40px', fontWeight:'bolder'}}>Delivery Charges</p>
+      
     </div>
        <hr></hr> 
           <div className="subtotal">

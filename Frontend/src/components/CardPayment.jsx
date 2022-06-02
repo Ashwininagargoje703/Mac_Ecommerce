@@ -71,7 +71,7 @@ export const CardPayment = () => {
   return (
     <>
       {modal && <Modal onClose={() => setModal(false)} />}
-      <div className="container1" style={{marginLeft:"30%" , backgroundColor:'whitesmoke'}}>
+      <div className="container1" style={{marginLeft:"30%" }}>
         <div>
           <div className="Payment" style={{ marginTop: "20%" }}>
             <p className="del" style={{fontWeight:'bolder', fontSize:'30px'}}>Deliverd to this address</p>
@@ -103,14 +103,57 @@ export const CardPayment = () => {
             </div>
           </div>
           <hr></hr>
-
-          <div className="city" style={{ marginTop: "10px", height:'20%' }}>
-            <div style={{ lineHeight: "10px" }}>
-              <p className="userrr">delivery At Home</p>
-              <br></br>
-            
+          <div className="city" style={{ marginTop: "10px" }}>
+            <div style={{ lineHeight: "50px" }}>
+              <p className="userrr">Meet at Door</p>
+              <p style={{ marginLeft: "30px", color: "green" }}>
+                Add delivery instructions
+              </p>
             </div>
           </div>
+          <hr></hr>
+
+          <div className="delivery_Instruction">
+            <div className="delivery">
+              <p>Delivery Estimate</p>
+              <p>20-30 minutes</p>
+            </div>
+            <div style={{ marginLeft: "30px" }}>
+              <Box>
+                <RadioGroup>
+                  <div style={{ lineHeight: "5px" }}>
+                    <FormControlLabel
+                      control={<Radio color="default" />}
+                      label="Priority"
+                      value="priority"
+                    />
+
+                    <p style={{ paddingLeft: "30px", color: "grey" }}>
+                      Delivery directly to you
+                    </p>
+                  
+                  </div>
+                  <div>
+                    <FormControlLabel
+                      control={<Radio color="default" />}
+                      label="Standard"
+                      value="Standard"
+                    />
+                
+                  </div>
+                  <div>
+                    <FormControlLabel
+                      control={<Radio color="default" />}
+                      label="Schedule"
+                      value="Schedule"
+                    />
+                    
+                  </div>
+                </RadioGroup>
+              </Box>
+            </div>
+          </div>
+
           <hr></hr>
 {/*           
            <div className="Payment">

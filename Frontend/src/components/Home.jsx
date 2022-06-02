@@ -10,7 +10,9 @@ import { Stack, Rating } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import {Link}from "react-router-dom"
 import{Footer} from "./Footer";
+import { Login } from "./login";
 
+import { Login_detail } from "../redux/actions";
 
 export const Home = () => {
   const dispatch = useDispatch();
@@ -20,6 +22,8 @@ export const Home = () => {
 
   const token = useSelector((e) => e.MasaiReducer.token);
 
+  const localToken = localStorage.getItem("token");
+  dispatch(Login_detail(localToken));
 
 
   const [loader, setLoader] = useState(false);
@@ -73,7 +77,9 @@ export const Home = () => {
 
   return (
     <>
-     
+     {!token ? (
+        <Login />
+      ) : (
         <>
           {loader ? (
             <img
@@ -83,7 +89,7 @@ export const Home = () => {
             />
           ) : (
             <>
-  
+
                 <div className="cardiv">
                   <Carousel className="carsdiv">
                     {items.map((e) => (
@@ -92,8 +98,8 @@ export const Home = () => {
                       </div>
                     ))}
                   </Carousel>
-
-                  <Link to="/Product" > <div className="shopping-product"><h1 style={{fontSize:'40px', fontWeight:'bolder'}}>BEAUTY PRODUCT</h1></div></Link>
+               
+                  <Link to="/Product" > <div className="shopping-product"><h1 style={{fontSize:'30px', fontWeight:'bolder'}}>BEAUTY PRODUCT</h1></div></Link>
 
       <div className="Beauty">
       <div  className="Beautyimage">
@@ -107,15 +113,10 @@ export const Home = () => {
       <div  className="Beautyimage">
       <Link to="/Product"><img className="firstimage1" src="https://media-cldnry.s-nbcnews.com/image/upload/t_social_share_1200x630_center,f_auto,q_auto:best/newscms/2019_12/1414358/vanity-makeup-today-190302-main-01.jpg" /></Link>
       </div>
-      <div  className="Beautyimage">
-      <Link to="/Product"><img className="firstimage1" src="https://5.imimg.com/data5/EB/TV/YA/SELLER-88811941/huda-beauty-lipsticks-set-of-12-500x500.JPG" /></Link>
-      </div>
-      <div  className="Beautyimage">
-      <Link to="/Product"><img className="firstimage1" src="https://media.allure.com/photos/5e34591a4b7d1e0008483b50/master/pass/LEDE_SOCIAL.jpg" /></Link>
-      </div>
+   
       </div>
 
-      <Link to="/Product" >  <div className="shopping-product"><h2 style={{fontSize:'40px', fontWeight:'bolder'}}>JWELLARY</h2></div></Link>
+      <Link to="/Product" >  <div className="shopping-product"><h2 style={{fontSize:'30px', fontWeight:'bolder'}}>JWELLARY</h2></div></Link>
       <div  className="first-image">
       <Link to="/Product"><img className="firstimage1" src="https://www.anjalijewellers.in/assets/images/costume-jwellery1.jpg" alt="" /></Link>
       </div>
@@ -142,7 +143,7 @@ export const Home = () => {
       </div>
       </div>
 
-      <Link to="/Product" >  <div className="shopping-product"><h2 style={{fontSize:'40px', fontWeight:'bolder'}}>HANDBAG</h2></div></Link>
+      <Link to="/Product" >  <div className="shopping-product"><h2 style={{fontSize:'30px', fontWeight:'bolder'}}>HANDBAG</h2></div></Link>
 
       <div className="jwellery">
       <div  className="jwelleryimage">
@@ -166,6 +167,7 @@ export const Home = () => {
       </div>
       </div>
 
+
     <div className="lastcontent">
       <h3>The Ultimate Domestic Online Shopping Experience Platform in India. Benefits of online Shopping :
 </h3>
@@ -183,13 +185,14 @@ export const Home = () => {
       <div>Order History:
 </div> 
 </div>
-                  </div>
+</div>
+
              
              
             </>
           )}
         </>
-    
+     )}
     </>
          
   );

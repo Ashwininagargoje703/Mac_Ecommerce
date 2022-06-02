@@ -18,7 +18,7 @@
     gap:20px;
     text-align: centre;
     margin-top: 30px;
-    height: 400px;
+    height: 600px;
 }
 
 .productdiv:hover{
@@ -97,7 +97,7 @@
 }
 .first-image > img{
     width: 100%;
-    height: 20%;
+    height: 30%;
     border: 1px solid red;
     cursor: pointer;
 
@@ -109,7 +109,7 @@
 
 .Beauty{
     height: 100%;
-        display: flex;
+    display: flex;
     justify-content: space-between;
     gap: 3%;
     margin-left: 2%;
@@ -118,7 +118,6 @@
 
 .Beautyimage{
     height: 100%;
-    width: 50%;
 
 }
 

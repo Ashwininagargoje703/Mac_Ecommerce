@@ -21,7 +21,7 @@ import { navCart } from "../redux/actions";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-
+import { Login_detail } from "../redux/actions";
 
 
 
@@ -60,7 +60,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     transition: theme.transitions.create('width'),
     width: '100%',
     [theme.breakpoints.up('md')]: {
-      width: '20ch',
+      width: '50ch',
     },
   },
 }));
@@ -72,7 +72,8 @@ export const Navbar=()=>{
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
   const token = useSelector((e) => e.MasaiReducer.token);
-  
+  const localToken = localStorage.getItem("token");
+  dispatch(Login_detail(localToken));
   const cartDataRedux = useSelector((e) => e.MasaiReducer.cartData);
   console.log("dataaa redux", cartDataRedux.length);
 
@@ -90,6 +91,14 @@ export const Navbar=()=>{
     axios.get("https://my-json-server-masai.herokuapp.com/cartproduct").then(({ data }) => {
       setData(data);
     });
+  };
+
+  const handleLogin = () => {
+    navigate("/login");
+  };
+  const handleLogout = () => {
+    dispatch(Login_detail({}));
+    localStorage.setItem("token", "");
   };
 
 
@@ -111,7 +120,29 @@ export const Navbar=()=>{
   };
 
 
-
+  const menuId = "primary-search-account-menu";
+  const renderMenu = (
+    <Menu
+      anchorEl={anchorEl}
+      anchorOrigin={{
+        vertical: "top",
+        horizontal: "right",
+      }}
+      id={menuId}
+      keepMounted
+      transformOrigin={{
+        vertical: "top",
+        horizontal: "right",
+      }}
+      open={isMenuOpen}
+      onClose={handleMenuClose}
+    >
+      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+      <MenuItem onClick={token ? handleLogout : handleLogin}>
+        {token ? "Logout" : "Login"}
+      </MenuItem>
+    </Menu>
+  );
 
   const mobileMenuId = 'primary-search-account-menu-mobile';
   const renderMobileMenu = (
@@ -138,6 +169,8 @@ export const Navbar=()=>{
           aria-controls="primary-search-account-menu"
           aria-haspopup="true"
           color="inherit"
+          onClick={() => navigate("/register")}
+
         >
           <AccountCircle />
         </IconButton>
@@ -148,7 +181,7 @@ export const Navbar=()=>{
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar  sx={{bgcolor:'#041d5c'}} position="fixed">
+      <AppBar  sx={{bgcolor:'black'}} position="fixed">
         <Toolbar>
           <IconButton
             size="large"
@@ -164,9 +197,10 @@ export const Navbar=()=>{
             noWrap
             component="div"
             sx={{ display: { xs: 'none', sm: 'block' },fontFamily:'sans-serif',cursor:"pointer"}}
-            onClick={()=>navigate("/home")}
+            onClick={()=>navigate("/")}
           >
-          <img style={{height :'40px', width: '120px'}} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC9gIJ8P-mH6gnhNlBAtbV4oue1oJMSE0QbQ&usqp=CAU'></img>
+            
+          <img style={{height :'40px', width: '120px'}} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC9gIJ8P-mH6gnhNlBAtbV4oue1oJMSE0QbQ&usqp=CAU'></img> 
           </Typography>
           <Search >
             <SearchIconWrapper>
@@ -179,12 +213,12 @@ export const Navbar=()=>{
           </Search>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex',} }}>
-           
+          {!token ? null : (
             <IconButton
               size="large"
               edge="end"
               aria-label="account of current user"
-         
+              aria-controls={menuId}
               aria-haspopup="true"
               
               color="inherit"
@@ -197,15 +231,17 @@ export const Navbar=()=>{
                 ></Badge>
               <ShoppingCartIcon />
             </IconButton>
+                    )}
             <IconButton
              
               size="large"
               edge="end"
               aria-label="account of current user"
-         
+              aria-controls={menuId}
               aria-haspopup="true"
+              onClick={handleProfileMenuOpen}
               color="inherit"
-            onClick={()=>navigate("/signup")} 
+            
             >
               <AccountCircle   />
             </IconButton>
@@ -225,7 +261,7 @@ export const Navbar=()=>{
         </Toolbar>
       </AppBar>
       {renderMobileMenu}
-   
+      {renderMenu}
     </Box>
   );
 }
